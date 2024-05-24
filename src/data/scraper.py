@@ -51,6 +51,21 @@ def get_recipe_links(total_pages):
     return recipe_links
 
 
+def image_download(image_url):
+    """
+    Download an image from the URL
+
+    :param image_url: URL of the image to download
+    :return: Binary image data
+    """
+    response = requests.get(image_url)
+    if response.status_code == 200:
+        return response.content
+    else:
+        print(f"Failed to download image from {image_url}")
+        return None
+
+
 def get_recipes(recipe_url):
     time.sleep(5)
     print(f"Getting recipe details from {recipe_url}")
@@ -69,14 +84,48 @@ def get_recipes(recipe_url):
 
     # Join the servings into a range string (e.g., "2-4 servings")
     recipe_servings = ' - '.join(servings) + ' servings'
-    recipe_description = recipe_div.find("div", class_="tasty-recipes-description-body").find("p").text
-    recipe_ingredients = recipe_div.find("div", class_="tasty-recipes-ingredients")
-    recipe_ingredients_sub_div = recipe_ingredients.find("div", {"data-tasty-recipes-customization":"body-color.color"})
-    ingredients = recipe_ingredients_sub_div.find_all('li', {'data-tr-ingredient-checkbox': True})
+    recipe_description = recipe_div.find("div", class_= "tasty-recipes-description-body").find("p").text
+    recipe_ingredients_sibling = recipe_div.find("div", class_= "tasty-recipes-ingredients-header")
+    recipe_ingredients = recipe_ingredients_sibling.findNextSibling("div")
+    ingredients = []
+    for p_tag in recipe_ingredients.findAll('p'):
+        ul_tag = p_tag.findNextSibling('ul')
+        if ul_tag:
+            li_tags = ul_tag.findAll('li')
+        ingredients.extend([li_tag.input["aria-label"] for li_tag in li_tags])
 
+    instructions = []
+    recipe_instructions_sibling_div = recipe_div.find("div", class_="tasty-recipes-instructions-header")
+    recipe_instructions_div = recipe_instructions_sibling_div.findNextSibling("div")
+    instruction_items = recipe_instructions_div.findAll("li")
+    for item in instruction_items:
+        instructions.append(item.text)
 
+    recipe_prep_time = recipe_div.find("span", class_="tasty-recipes-prep-time").text
+    recipe_cook_time = recipe_div.find("span", class_="tasty-recipes-cook-time").text
+    recipe_category = recipe_div.find("span", class_="tasty-recipes-category").text
+    recipe_method = recipe_div.find("span", class_="tasty-recipes-method").text
+    recipe_cuisine = recipe_div.find("span", class_="tasty-recipes-cuisine").text
+    recipe_keywords = recipe_div.find("div", class_="tasty-recipes-keywords").find("p").get_text(strip=True)
+    recipe_keywords = recipe_keywords[len("Keywords:"):].split(",")
+    time.sleep(5)
+    recipe_img_data = image_download(recipe_img)
 
-    return recipe_img, recipe_title, recipe_servings, recipe_description, ingredients
+    recipe = {'image': recipe_img_data,
+              'title': recipe_title,
+              'description': recipe_description,
+              'total time': recipe_total_time,
+              'prep time': recipe_prep_time,
+              'cook time': recipe_cook_time,
+              'category': recipe_category,
+              'method': recipe_method,
+              'cuisine': recipe_cuisine,
+              'yield': recipe_servings,
+              'ingredients': ingredients,
+              'instructions': instructions,
+              'keywords': recipe_keywords
+              }
+    return recipe
 
 
 def scrape_recipes():
