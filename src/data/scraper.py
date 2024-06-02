@@ -1,8 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
 import time
+import datetime
 import pandas as pd
+import logging
 from src.utils.config import BASE_URL, RECIPE_LIST_URL, HEADERS
+
+cur_time = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+log_file_name = f"../../logs/scraper/scraper_{cur_time}.log"
+logging.basicConfig(filename=log_file_name, filemode='', format='%(asctime)s - %(message)s')
 
 def get_number_of_pages():
     """
@@ -68,7 +74,6 @@ def image_download(image_url):
 
 def get_recipes(recipe_url):
     try:
-        time.sleep(60)
         print(f"Getting recipe details from {recipe_url}")
         recipe_response = requests.get(recipe_url, headers=HEADERS)
         recipe_soup = BeautifulSoup(recipe_response.content, "html.parser")
