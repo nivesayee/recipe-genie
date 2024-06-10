@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommended Recipes</title>
+</head>
+<body>
+    <h1>Recommended Recipes</h1>
+    <ul>
+        {% for index, row in recipes.iterrows() %}
+            <li>
+                <h2>{{ row['title'] }}</h2>
+                <p>{{ row['description'] }}</p>
+                <p>Ingredients: {{ row['ingredients'] }}</p>
+                <p>Total Time: {{ row['total_time'] }}</p>
+                <p><img src="{{ row['image'] }}" alt="{{ row['title'] }}"/></p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
