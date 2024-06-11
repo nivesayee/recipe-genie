@@ -45,9 +45,10 @@ def preprocess_ingredients(ingredients_str):
         if 'oil' not in cleansed_ingredient and 'salt' not in cleansed_ingredient and 'water' not in cleansed_ingredient\
                 and cleansed_ingredient != '':
             preprocessed.add(cleansed_ingredient)
-    return preprocessed
+    return ''.join(preprocessed)
 
 def preprocess_user_ingredients(user_ingredients):
     ingredients = user_ingredients.split(',')
-    preprocessed_user_ingredients = preprocess_ingredients(ingredients)
+    ingredients_str = str(ingredients)
+    preprocessed_user_ingredients = preprocess_ingredients(ingredients_str)
     return preprocessed_user_ingredients
