@@ -8,7 +8,7 @@ import pandas as pd
 app = Flask(__name__)
 
 # Load all the pickle files
-with open("../data/processed/recipes.pkl", 'rb') as file:
+with open("src/data/processed/recipes.pkl", 'rb') as file:
    recipe_df = pickle.load(file)
 
 with open("../data/processed/tfidf_matrix.pkl", 'rb') as file:
