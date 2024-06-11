@@ -1,0 +1,8 @@
+bs4==0.0.2
+flask==3.0.3
+nltk==3.8.1
+numpy==1.26.4
+pandas==2.2.2
+regex==2024.5.15
+requests==2.31.0
+sklearn==0.0
