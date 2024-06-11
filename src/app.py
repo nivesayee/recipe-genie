@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 import pickle
-from src.utils.preprocess import preprocess_user_ingredients
+from utils.preprocess import preprocess_user_ingredients
 from sklearn.metrics.pairwise import cosine_similarity
 import pandas as pd
 
