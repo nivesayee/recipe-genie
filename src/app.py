@@ -20,7 +20,6 @@ tfidf_matrix_path = os.path.join(data_dir, "processed", "tfidf_matrix.pkl")
 vectorizer_path = os.path.join(data_dir, "processed", "vectorizer.pkl")
 
 
-# Load all the pickle files
 with open(recipes_path, 'rb') as file:
    recipe_df = pickle.load(file)
 
