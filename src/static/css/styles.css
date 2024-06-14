@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-banner {
+    background-image: url('../images/hero-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-banner h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.container {
+    padding: 20px;
+}

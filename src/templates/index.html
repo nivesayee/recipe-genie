@@ -2,15 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Genie</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <h1> Recipe Genie </h1>
-    <h2> Got ingredients? We've got recipes! 🥘🔍 </h2>
-    <form method="post">
-        <label for="ingredients">Enter your ingredients (comma-separated):</label><br>
-        <input type="text" id="ingredients" name="ingredients" required><br>
-        <input type="submit" value="Get Recipes">
-    </form>
+    <div class="hero-banner"></div>
+    <div class="container">
+        <h1> Recipe Genie </h1>
+        <h2> Got ingredients? We've got recipes! 🥘🔍 </h2>
+        <form method="post">
+            <label for="ingredients">Enter your ingredients (comma-separated):</label><br>
+            <input type="text" id="ingredients" name="ingredients" required><br>
+            <input type="submit" value="Get Recipes">
+        </form>
+    </div>
 </body>
 </html>
