@@ -5,17 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Genie</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="hero-banner"></div>
-    <div class="container">
-        <h1> Recipe Genie </h1>
-        <h2> Got ingredients? We've got recipes! 🥘🔍 </h2>
-        <form method="post">
-            <label for="ingredients">Enter your ingredients (comma-separated):</label><br>
-            <input type="text" id="ingredients" name="ingredients" required><br>
-            <input type="submit" value="Get Recipes">
-        </form>
+    <div class="hero-banner">
+        <div class="hero-banner-wrapper">
+            <div class="container">
+                <h1> Recipe Genie </h1>
+                <h4> From pantry to plate, your wish is our command! 🥘🔍 </h4>
+                <form method="post">
+                    <label for="ingredients">Enter your ingredients (comma-separated):</label><br>
+                    <input type="text" id="ingredients" name="ingredients" required><br>
+                    <input type="submit" value="Get Recipes">
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 </html>
