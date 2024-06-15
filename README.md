@@ -28,4 +28,5 @@ Recipe Genie is a web application that helps users discover recipes based on the
 
 ## Acknowledgements
 
-Special thanks to Render for providing a platform for deploying web applications easily.
+- Background image for the website was sourced from [Freepik](https://www.freepik.com) and created by [rorozoa](https://www.freepik.com/free-photo/forkful-steaming-spaghetti-with-shiny-noodles-hint-tomato-sauce_135009355.htm#fromView=search&page=1&position=23&uuid=b2d1a2e0-1b78-438d-bb24-7d040d437f83).
+- Special thanks to Render for providing a platform for deploying web applications easily.
