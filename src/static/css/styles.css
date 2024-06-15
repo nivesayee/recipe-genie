@@ -17,7 +17,7 @@ body {
 }
 
 
-h1 {
+.heading-text {
     font-family: cursive;
     font-size: 3rem;
     color: #fff;
@@ -76,5 +76,77 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #d03e00;
+    background-color: #aa3500;
 }
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+.recipes-header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.recipe-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    gap: 35px;
+}
+
+.recipe {
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.recipe-header {
+    text-align: center;
+}
+
+.recipe h2 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.recipe img {
+    width: 183;
+    height: 183;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.recipe img:hover {
+    transform: scale(1.05);
+}
+
+.recipe-details {
+    display: none;
+    margin-top: 10px;
+}
+
+.recipe-details p, .recipe-details ol {
+    margin: 10px 0;
+}
+
+.instructions {
+    padding-left: 20px;
+}
+
+.wrapper {
+display: flex;
+flex-direction: column;}

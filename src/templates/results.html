@@ -1,20 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recommended Recipes</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <script src="../static/scripts/scripts.js" defer></script>
 </head>
 <body>
-    <h1>Recommended Recipes</h1>
-    <ul>
-        {% for index, row in recipes.iterrows() %}
-            <li>
-                <h2>{{ row['title'] }}</h2>
-                <p>{{ row['description'] }}</p>
-                <p>Ingredients: {{ row['ingredients'] }}</p>
-                <p>Total Time: {{ row['total_time'] }}</p>
-                <p><img src="{{ row['image'] }}" alt="{{ row['title'] }}"/></p>
-            </li>
-        {% endfor %}
-    </ul>
+<div class="hero-banner">
+    <div class="wrapper">
+    <header>
+        <h1 class="recipes-header">Recommended Recipes</h1>
+    </header>
+    <main>
+        <ul class="recipe-list">
+            {% for index, row in recipes.iterrows() %}
+                <li class="recipe">
+                    <div class="recipe-header">
+                        <h2>{{ row['title'] }}</h2>
+                        <div class="recipe-image">
+                            <img src="{{ row['image'] }}" alt="{{ row['title'] }}" onclick="toggleDetails({{ index }})">
+                        </div>
+                    </div>
+                    <div class="recipe-details" id="recipe-details-{{ index }}">
+                        <p>{{ row['description'] }}</p>
+                        <p>Total Time: {{ row['total time'] }}</p>
+                        <p>Ingredients: {{ row['ingredients'] }}</p>
+                        <p>Instructions:</p>
+                        <ol class="instructions">
+                            {% for instruction in row['instructions'] %}
+                                <li>{{ instruction | safe }}</li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+    </div>
+</div>
 </body>
 </html>

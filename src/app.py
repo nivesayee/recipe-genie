@@ -4,6 +4,7 @@ from utils.preprocess import preprocess_user_ingredients
 from sklearn.metrics.pairwise import cosine_similarity
 import pandas as pd
 import os
+from ast import literal_eval
 
 
 app = Flask(__name__)
@@ -40,6 +41,7 @@ def index():
         similarity_scores = cosine_similarity(user_ingredients_vector, tfidf_matrix)
         top_indices = similarity_scores.argsort()[0][-5:][::-1]
         recommended_recipes = recipe_df.iloc[top_indices]
+        recommended_recipes['instructions'] = recommended_recipes['instructions'].apply(literal_eval)
         return render_template('results.html', recipes=recommended_recipes)
     return render_template('index.html')
 
