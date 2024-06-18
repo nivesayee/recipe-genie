@@ -18,7 +18,7 @@
             {% for index, row in recipes.iterrows() %}
                 <li class="recipe">
                     <div class="recipe-header">
-                        <h2>{{ row['title'] }}</h2>
+                        <h2 class="recipe-title">{{ row['title'] }}</h2>
                         <div class="recipe-image">
                             <img src="{{ row['image'] }}" alt="{{ row['title'] }}" onclick="toggleDetails({{ index }})">
                         </div>
