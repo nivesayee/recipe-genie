@@ -27,7 +27,7 @@ The recipe data was scraped from https://pinchofyum.com/ using a Python web scra
 - **Identify the Data:** Determined which recipe attributes were necessary (e.g., title, ingredients, instructions).
 - **Scraping Process:** Wrote scripts to crawl the website and extract the relevant data. This involved sending HTTP requests to the website, parsing the HTML content, and extracting the desired information.
 - **Save the Data:** The scraped data was saved in CSV format for further processing.
-
+<br/>
 2. **Data Preprocessing:** 🍅<br/><br/>
 Once the data was collected, it required preprocessing. This included:
 
@@ -36,20 +36,20 @@ Once the data was collected, it required preprocessing. This included:
 - **Stemming:** Reduced words to their root form using NLTK's PorterStemmer.
 - **Unwanted Words and Measurements Removal:** Excluded specific unwanted words and common measurement terms that do not add value to the ingredient description.
 - **Regex Cleaning:** Removed any non-alphabetic characters and parentheses.
-
+<br/>
 3. **Text Vectorization and Similarity Calculation:** 🔍<br/><br/>
 To recommend recipes based on ingredients, the following steps were taken:
 
 - **TF-IDF Vectorization:** Used the TF-IDF (Term Frequency-Inverse Document Frequency) method from scikit-learn to convert the ingredient lists into numerical vectors. This method helps in giving more importance to unique ingredients while reducing the weight of common ingredients.
 
 - **Cosine Similarity:** Calculated the similarity between the user's input ingredients and the recipes using cosine similarity. This metric measures the cosine of the angle between two vectors, providing a similarity score.
-
+<br/>
 4. **Building the web application with Flask:** 🌐<br/><br/>
 - **Backend Setup:** Created a Flask application to handle user requests and serve the recommendations. The Flask app processes the user's input, calculates the similarity scores, and returns the top 5 recommended recipes based on the similarity scores.
 
 - **Frontend Design:** Used HTML and CSS to create the user interface. JavaScript was added for dynamic interactions, such as displaying recipe details in a modal window.
-
-5. **Deploying the Application on Render:** 🚀<br/><br/>
+<br/>
+5. **Deploying the Application on Render:** 🚀<br/>
 - **Setup Render Account:** Created an account on Render and set up a new web service.
 
 - **Deployment:** Pushed the application code to this Git repository. Connected the repository to Render and deployed the application by following Render's deployment guide.
