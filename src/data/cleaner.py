@@ -11,7 +11,7 @@ pd.set_option('display.max_colwidth', None)
 
 # Read the Recipe file
 df = pd.read_csv("../../data/raw/recipes.csv")
-
+df_original = df.copy(deep=True)
 
 df['ingredients'] = df['ingredients'].apply(preprocess_ingredients)
 
@@ -20,8 +20,6 @@ df.to_csv("../../data/processed/recipes.csv", index=False)
 
 vectorizer = TfidfVectorizer()
 tfidf_matrix = vectorizer.fit_transform(df['ingredients'])
-
-#print(vectorizer.get_feature_names_out())
 
 # Convert the TF-IDF matrix to a DataFrame for better visualization
 tfidf_df = pd.DataFrame(tfidf_matrix.toarray(), columns=vectorizer.get_feature_names_out())
@@ -33,8 +31,6 @@ with open('../../data/processed/vectorizer.pkl', 'wb') as file:
     pickle.dump(vectorizer, file)
 
 with open('../../data/processed/recipes.pkl', 'wb') as file:
-    pickle.dump(df, file)
+    pickle.dump(df_original, file)
 print("TF-IDF matrix and vectorizer saved to 'tfidf_matrix.pkl' and 'tfidf_vectorizer.pkl'.")
-
-
 

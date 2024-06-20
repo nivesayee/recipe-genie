@@ -20,10 +20,10 @@
                     <div class="recipe-header">
                         <h2 class="recipe-title">{{ row['title'] }}</h2>
                         <div class="recipe-image">
-                            <img src="{{ row['image'] }}" alt="{{ row['title'] }}" onclick="toggleDetails({{ index }})">
+                            <img src="{{ row['image'] }}" alt="{{ row['title'] }}" onclick="openModal({{ index }})">
                         </div>
                     </div>
-                    <div class="recipe-details" id="recipe-details-{{ index }}">
+                    <div class="recipe-details" id="recipe-details-{{ index }}" style="display:none;">
                         <p>{{ row['description'] }}</p>
                         <p>Total Time: {{ row['total time'] }}</p>
                         <p>Ingredients: {{ row['ingredients'] }}</p>
@@ -38,6 +38,14 @@
             {% endfor %}
         </ul>
     </main>
+    </div>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <!-- Recipe details will be injected here -->
     </div>
 </div>
 </body>
