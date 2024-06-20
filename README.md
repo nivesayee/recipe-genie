@@ -28,6 +28,7 @@ The recipe data was scraped from https://pinchofyum.com/ using a Python web scra
 - **Scraping Process:** Wrote scripts to crawl the website and extract the relevant data. This involved sending HTTP requests to the website, parsing the HTML content, and extracting the desired information.
 - **Save the Data:** The scraped data was saved in CSV format for further processing.
 <br/>
+
 2. **Data Preprocessing:** 🍅<br/><br/>
 Once the data was collected, it required preprocessing. This included:
 
