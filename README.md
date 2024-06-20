@@ -38,6 +38,7 @@ Once the data was collected, it required preprocessing. This included:
 - **Unwanted Words and Measurements Removal:** Excluded specific unwanted words and common measurement terms that do not add value to the ingredient description.
 - **Regex Cleaning:** Removed any non-alphabetic characters and parentheses.
 <br/>
+
 3. **Text Vectorization and Similarity Calculation:** 🔍<br/><br/>
 To recommend recipes based on ingredients, the following steps were taken:
 
@@ -45,11 +46,13 @@ To recommend recipes based on ingredients, the following steps were taken:
 
 - **Cosine Similarity:** Calculated the similarity between the user's input ingredients and the recipes using cosine similarity. This metric measures the cosine of the angle between two vectors, providing a similarity score.
 <br/>
+
 4. **Building the web application with Flask:** 🌐<br/><br/>
 - **Backend Setup:** Created a Flask application to handle user requests and serve the recommendations. The Flask app processes the user's input, calculates the similarity scores, and returns the top 5 recommended recipes based on the similarity scores.
 
 - **Frontend Design:** Used HTML and CSS to create the user interface. JavaScript was added for dynamic interactions, such as displaying recipe details in a modal window.
 <br/>
+
 5. **Deploying the Application on Render:** 🚀<br/>
 - **Setup Render Account:** Created an account on Render and set up a new web service.
 
