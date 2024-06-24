@@ -67,19 +67,6 @@ To recommend recipes based on ingredients, the following steps were taken:
 2. **Input Ingredients:** Enter the ingredients you have on hand into the provided input field.
 3. **Get Recipe Recommendations:** Click on the "Get Recipes" button to receive a list of recommended recipes based on your ingredients.
 4. **Explore Recipes:** Browse through the list of recommended recipes, and click on any recipe to view more details, including ingredients and instructions.
-   
-<!-- The script tag should live in the head of your page if at all possible -->
-<script type="text/javascript" async src="https://play.vidyard.com/embed/v4.js"></script>
-
-<!-- Put this wherever you would like your player to appear -->
-<img
-  style="width: 100%; margin: auto; display: block;"
-  class="vidyard-player-embed"
-  src="https://play.vidyard.com/tzE5tzmLbyp6hQsy9k4oAW.jpg"
-  data-uuid="tzE5tzmLbyp6hQsy9k4oAW"
-  data-v="4"
-  data-type="inline"
-/>
 
 ## Acknowledgements 🙏
 
