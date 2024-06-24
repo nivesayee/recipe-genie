@@ -1,5 +1,7 @@
 # Recipe Genie 🍲✨
 
+![Recipe Genie Banner](src/static/images/hero-banner.jpg)
+
 Recipe Genie is a web application that helps users discover recipes based on the ingredients they have on hand. Simply enter your ingredients, and Recipe Genie will provide you with a list of delicious recipes to try.
 
 ## Features 🌟
