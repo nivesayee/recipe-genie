@@ -68,7 +68,7 @@ To recommend recipes based on ingredients, the following steps were taken:
 3. **Get Recipe Recommendations:** Click on the "Get Recipes" button to receive a list of recommended recipes based on your ingredients.
 4. **Explore Recipes:** Browse through the list of recommended recipes, and click on any recipe to view more details, including ingredients and instructions.
 
-[![Watch the demo video](https://img.youtube.com/vi/tzE5tzmLbyp6hQsy9k4oAW/0.jpg)](https://share.vidyard.com/watch/tzE5tzmLbyp6hQsy9k4oAW)
+<iframe src="https://share.vidyard.com/watch/tzE5tzmLbyp6hQsy9k4oAW?" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
 ## Acknowledgements 🙏
 
