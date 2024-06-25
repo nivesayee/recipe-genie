@@ -68,6 +68,8 @@ To recommend recipes based on ingredients, the following steps were taken:
 3. **Get Recipe Recommendations:** Click on the "Get Recipes" button to receive a list of recommended recipes based on your ingredients.
 4. **Explore Recipes:** Browse through the list of recommended recipes, and click on any recipe to view more details, including ingredients and instructions.
 
+
+
 ## Acknowledgements 🙏
 
 - Recipes were scraped from [Pinch of Yum](https://pinchofyum.com/).
